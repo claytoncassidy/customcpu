@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Programming/Personal/Custom CPU/v1-single-cycle/src/program_counter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'program_counter'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Programming/Personal/Custom CPU/v1-single-cycle/sim/program_counter_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'program_counter_tb'

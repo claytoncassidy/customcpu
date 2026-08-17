@@ -1,0 +1,5 @@
+[libraries]
+defaultlib.files = [
+  'v1-single-cycle/src/*.vhd',
+  'v1-single-cycle/sim/*.vhd',
+]
