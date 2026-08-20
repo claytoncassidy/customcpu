@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/src/sign_extender.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'sign_extender'
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/sim/sign_extender_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'sign_extender_tb'
