@@ -150,6 +150,7 @@ begin
         assert data1_tb = x"00000002"
             report "test 7 failed" severity error;
 
+        report "all tests completed";
         wait;
     end process;
 

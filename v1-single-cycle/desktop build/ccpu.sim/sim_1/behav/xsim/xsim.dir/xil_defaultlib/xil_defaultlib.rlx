@@ -2,7 +2,9 @@
 2020.2
 May 22 2025
 00:13:55
+E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/sim/data_memory_tb.vhd,1788024435,vhdl,,,,data_memory_tb,,,,,,,,
 E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/sim/instruction_memory_tb.vhd,1787518800,vhdl,,,,instruction_memory_tb,,,,,,,,
 E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/sim/sign_extender_tb.vhd,1787194162,vhdl,,,,sign_extender_tb,,,,,,,,
+E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/src/data_memory.vhd,1788024053,vhdl,E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/sim/data_memory_tb.vhd,,,data_memory,,,,,,,,
 E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/src/instruction_memory.vhd,1787519341,vhdl,E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/sim/instruction_memory_tb.vhd,,,instruction_memory,,,,,,,,
 E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/src/sign_extender.vhd,1787192822,vhdl,E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/sim/sign_extender_tb.vhd,,,sign_extender,,,,,,,,

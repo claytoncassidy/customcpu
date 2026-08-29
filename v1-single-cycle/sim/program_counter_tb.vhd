@@ -72,7 +72,7 @@ begin
         assert curr_addr_tb = x"00000020"
             report "test 5 failed" severity error;
 
-        report "all tests complete";
+        report "all tests completed";
 
         wait;
     end process;
