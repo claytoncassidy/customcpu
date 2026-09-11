@@ -9,7 +9,7 @@ entity alu is
         b           : in  std_logic_vector(31 downto 0);
         alu_op      : in  std_logic_vector(3 downto 0);
         result      : out std_logic_vector(31 downto 0);
-        -- flags (not used in riscv but used for debugging)
+        -- flags (zero is the only one actively used, other two are for debugging)
         zero        : out std_logic;
         invalid_op  : out std_logic;
         overflow    : out std_logic
