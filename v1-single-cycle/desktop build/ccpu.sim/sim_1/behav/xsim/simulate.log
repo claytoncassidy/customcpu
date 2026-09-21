@@ -1,3 +1,3 @@
 Time resolution is 1 ps
 Note: all tests completed
-Time: 200 ns  Iteration: 0  Process: /data_memory_tb/test_loop  File: E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/sim/data_memory_tb.vhd
+Time: 291 ns  Iteration: 0  Process: /data_memory_tb/test_loop  File: E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/sim/data_memory_tb.vhd

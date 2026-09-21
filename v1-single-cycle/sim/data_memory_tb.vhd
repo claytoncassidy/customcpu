@@ -10,6 +10,7 @@ architecture simulation of data_memory_tb is
     signal address_tb      : std_logic_vector(31 downto 0);
     signal write_data_tb   : std_logic_vector(31 downto 0);
     signal write_enable_tb : std_logic;
+    signal mem_size_tb     : std_logic_vector(1 downto 0);
     signal data_tb         : std_logic_vector(31 downto 0);
 
 begin
@@ -19,6 +20,7 @@ begin
             address      => address_tb,
             write_data   => write_data_tb,
             write_enable => write_enable_tb,
+            mem_size     => mem_size_tb,
             data         => data_tb
         );
 
@@ -27,6 +29,7 @@ begin
     test_loop : process
     begin
         write_enable_tb <= '0';
+        mem_size_tb     <= "10"; -- word, for all the original word-only tests below
 
         -- test 1: write 42 to address 0x14 (word index 5), then read it back
         address_tb      <= x"00000014";
@@ -130,6 +133,92 @@ begin
 
         assert data_tb = x"00000002"
             report "test 7 failed" severity error;
+
+        -- test 8: write one word, read each byte
+        address_tb      <= x"00000050";
+        write_data_tb   <= x"11223344";
+        write_enable_tb <= '1';
+        mem_size_tb     <= "10";
+        wait until rising_edge(clk_tb);
+
+        write_enable_tb <= '0';
+        mem_size_tb     <= "00"; -- byte
+
+        address_tb <= x"00000050"; -- offset 0
+        wait for 1 ns;
+        assert data_tb = x"00000044"
+            report "test 8 failed: offset 0" severity error;
+
+        address_tb <= x"00000051"; -- offset 1
+        wait for 1 ns;
+        assert data_tb = x"00000033"
+            report "test 8 failed: offset 1" severity error;
+
+        address_tb <= x"00000052"; -- offset 2
+        wait for 1 ns;
+        assert data_tb = x"00000022"
+            report "test 8 failed: offset 2" severity error;
+
+        address_tb <= x"00000053"; -- offset 3
+        wait for 1 ns;
+        assert data_tb = x"00000011"
+            report "test 8 failed: offset 3" severity error;
+
+        -- test 9: load full word, read each half word, lower and higher
+        mem_size_tb <= "01"; -- halfword
+
+        address_tb <= x"00000050"; -- low half
+        wait for 1 ns;
+        assert data_tb = x"00003344"
+            report "test 9 failed: low half" severity error;
+
+        address_tb <= x"00000052"; -- high half
+        wait for 1 ns;
+        assert data_tb = x"00001122"
+            report "test 9 failed: high half" severity error;
+
+        -- test 10: byte write only touches its own byte, rest of the word is untouched
+        address_tb      <= x"00000054";
+        write_data_tb   <= x"AABBCCDD";
+        write_enable_tb <= '1';
+        mem_size_tb     <= "10";
+        wait until rising_edge(clk_tb);
+
+        address_tb      <= x"00000055"; -- offset 1
+        write_data_tb   <= x"00000099";
+        mem_size_tb      <= "00"; -- byte
+        wait until rising_edge(clk_tb);
+
+        write_enable_tb <= '0';
+        address_tb      <= x"00000055";
+        wait for 1 ns;
+        assert data_tb = x"00000099"
+            report "test 10 failed: written byte did not take" severity error;
+
+        address_tb  <= x"00000054";
+        mem_size_tb <= "10";
+        wait for 1 ns;
+        assert data_tb = x"AABB99DD"
+            report "test 10 failed: byte write clobbered other bytes in the word" severity error;
+
+        -- test 11: halfword write only touches its own half, rest of the word is untouched
+        address_tb      <= x"00000058";
+        write_data_tb   <= x"12345678";
+        write_enable_tb <= '1';
+        mem_size_tb     <= "10";
+        wait until rising_edge(clk_tb);
+
+        address_tb      <= x"0000005A"; -- high half
+        write_data_tb   <= x"0000BEEF";
+        mem_size_tb      <= "01"; -- halfword
+        wait until rising_edge(clk_tb);
+
+        write_enable_tb <= '0';
+        address_tb      <= x"00000058";
+        mem_size_tb     <= "10";
+        wait for 1 ns;
+        assert data_tb = x"BEEF5678"
+            report "test 11 failed: halfword write clobbered the other half of the word" severity error;
 
         report "all tests completed";
         wait;

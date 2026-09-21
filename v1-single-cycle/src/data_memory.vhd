@@ -8,7 +8,8 @@ entity data_memory is
         address         : in std_logic_vector(31 downto 0);
         write_enable    : in std_logic;
         write_data      : in std_logic_vector(31 downto 0);
-        data            : out std_logic_vector(31 downto 0)
+        data            : out std_logic_vector(31 downto 0);
+        mem_size        : in std_logic_vector(1 downto 0)
     );
 end entity data_memory;
 
@@ -16,15 +17,59 @@ architecture behavior of data_memory is
     type data_memory_array is array (0 to 255) of std_logic_vector(31 downto 0);
     signal data_memory_registers : data_memory_array := (others => (others => '0'));
 begin
-    -- 9 downto 2 since bits 0 and 1 will carry no value since lw and sw will word align to multiples of 4
-    -- this assumes word only access. needs changing if halfword loads and stores
-    -- (lb/sb/lh/sh) ever get added, since those addresses won't always be multiples of 4
-    data <= data_memory_registers(to_integer(unsigned(address(9 downto 2))));
+    -- address(9 downto 2) selects the word; address(1 downto 0) + mem_size select
+    -- which byte(s)/halfword within that word are actually being accessed
+    process(address, mem_size, data_memory_registers)
+        variable word : std_logic_vector(31 downto 0);
+    begin
+        word := data_memory_registers(to_integer(unsigned(address(9 downto 2))));
+        case mem_size is
+            when "00" => -- byte
+                case address(1 downto 0) is
+                    when "00" => data <= (31 downto 8 => '0') & word(7 downto 0);
+                    when "01" => data <= (31 downto 8 => '0') & word(15 downto 8);
+                    when "10" => data <= (31 downto 8 => '0') & word(23 downto 16);
+                    when "11" => data <= (31 downto 8 => '0') & word(31 downto 24);
+                    when others => data <= (others => '0');
+                end case;
+            when "01" => -- halfword
+                case address(1) is
+                    when '0' => data <= (31 downto 16 => '0') & word(15 downto 0);
+                    when '1' => data <= (31 downto 16 => '0') & word(31 downto 16);
+                    when others => data <= (others => '0');
+                end case;
+            when "10" => -- word
+                data <= word;
+            when others =>
+                data <= (others => '0');
+        end case;
+    end process;
     process(clk)
+        variable idx : integer;
     begin
         if rising_edge(clk) then
             if write_enable = '1' then
-                data_memory_registers(to_integer(unsigned(address(9 downto 2)))) <= write_data;
+                idx := to_integer(unsigned(address(9 downto 2)));
+                case mem_size is
+                    when "00" => -- byte
+                        case address(1 downto 0) is
+                            when "00" => data_memory_registers(idx)(7 downto 0)   <= write_data(7 downto 0);
+                            when "01" => data_memory_registers(idx)(15 downto 8)  <= write_data(7 downto 0);
+                            when "10" => data_memory_registers(idx)(23 downto 16) <= write_data(7 downto 0);
+                            when "11" => data_memory_registers(idx)(31 downto 24) <= write_data(7 downto 0);
+                            when others => null;
+                        end case;
+                    when "01" => -- halfword
+                        case address(1) is
+                            when '0' => data_memory_registers(idx)(15 downto 0)  <= write_data(15 downto 0);
+                            when '1' => data_memory_registers(idx)(31 downto 16) <= write_data(15 downto 0);
+                            when others => null;
+                        end case;
+                    when "10" => -- word
+                        data_memory_registers(idx) <= write_data;
+                    when others =>
+                        null;
+                end case;
             end if;
         end if;
     end process;

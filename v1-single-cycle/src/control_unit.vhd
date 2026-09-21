@@ -36,40 +36,131 @@ begin
         pc_src_sel <= "00";
 
         case opcode is
-            when "0110011" => -- r type
+            when "0110011" => -- OP
                 reg_write <= '1';
-                mem_write <= '0';
-                alu_a_sel <= "00";
-                alu_b_sel <= '0';
-                wb_sel <= "00";
-                pc_src_sel <= "00";
                 case funct3 is
                     when "000" =>
-                    case funct7 is
-                        when "0" => -- add
-                            alu_op <= "0000";
-                        when "1" => -- sub
-                            alu_op <= "0001";
-                    end case;
-                    when "001" => -- sll
-                        alu_op <= "0111";
-                    when "010" =>
-                    when "011" =>
-                    when "100" =>
+                        case funct7(5) is
+                            when '0' => alu_op <= "0000"; -- add
+                            when '1' => alu_op <= "0001"; -- sub
+                            when others => null;
+                        end case;
+                    when "001" => alu_op <= "0111"; -- sll
+                    when "010" => alu_op <= "0010"; -- slt
+                    when "011" => alu_op <= "0011"; -- sltu
+                    when "100" => alu_op <= "0110"; -- xor
                     when "101" =>
-                    when "110" =>
-                    when "111" =>
+                        case funct7(5) is
+                            when '0' => alu_op <= "1000"; -- srl
+                            when '1' => alu_op <= "1001"; -- sra
+                            when others => null;
+                        end case;
+                    when "110" => alu_op <= "0101"; -- or
+                    when "111" => alu_op <= "0100"; -- and
+                    when others => null;
                 end case;
-            when "0010011" => -- i type
-            when "0000011" => -- lw
-            when "0100011" => -- sw
-            when "1100011" => -- branch
-            when "1101111" => -- jal
-            when "1100111" => -- jalr
-            when "0110111" => -- lui
-            when "0010111" => -- auipc
-            when "0001111" => -- fence
-            when "1110011" => -- system
+
+            when "0010011" => -- OP-IMM
+                reg_write <= '1';
+                alu_b_sel <= '1';
+                case funct3 is
+                    when "000" => alu_op <= "0000"; -- addi
+                    when "010" => alu_op <= "0010"; -- slti
+                    when "011" => alu_op <= "0011"; -- sltiu
+                    when "100" => alu_op <= "0110"; -- xori
+                    when "110" => alu_op <= "0101"; -- ori
+                    when "111" => alu_op <= "0100"; -- andi
+                    when "001" => alu_op <= "0111"; -- slli
+                    when "101" =>
+                        case funct7(5) is
+                            when '0' => alu_op <= "1000"; -- srli
+                            when '1' => alu_op <= "1001"; -- srai
+                            when others => null;
+                        end case;
+                    when others => null;
+                end case;
+
+            when "0000011" => -- LOAD (lb/lh/lw/lbu/lhu)
+                -- word-only for now: data_memory has no byte/halfword support yet,
+                -- so every load funct3 currently produces identical control signals
+                reg_write <= '1';
+                alu_b_sel <= '1';
+                alu_op    <= "0000"; -- address = rs1 + immediate
+                wb_sel    <= "01";   -- writeback comes from memory, not the ALU
+
+            when "0100011" => -- STORE (sb/sh/sw)
+                -- word-only for now, same limitation as LOAD
+                mem_write <= '1';
+                alu_b_sel <= '1';
+                alu_op    <= "0000"; -- address = rs1 + immediate
+
+            when "1100011" => -- BRANCH
+                case funct3 is
+                    when "000" => -- beq
+                        alu_op <= "0001"; -- sub
+                        if alu_zero = '1' then
+                            pc_src_sel <= "01";
+                        end if;
+                    when "001" => -- bne
+                        alu_op <= "0001"; -- sub
+                        if alu_zero = '0' then
+                            pc_src_sel <= "01";
+                        end if;
+                    when "100" => -- blt
+                        alu_op <= "0010"; -- slt
+                        if alu_zero = '0' then
+                            pc_src_sel <= "01";
+                        end if;
+                    when "101" => -- bge
+                        alu_op <= "0010"; -- slt
+                        if alu_zero = '1' then
+                            pc_src_sel <= "01";
+                        end if;
+                    when "110" => -- bltu
+                        alu_op <= "0011"; -- sltu
+                        if alu_zero = '0' then
+                            pc_src_sel <= "01";
+                        end if;
+                    when "111" => -- bgeu
+                        alu_op <= "0011"; -- sltu
+                        if alu_zero = '1' then
+                            pc_src_sel <= "01";
+                        end if;
+                    when others => null;
+                end case;
+
+            when "1101111" => -- JAL
+                reg_write  <= '1';
+                wb_sel     <= "10"; -- PC+4
+                pc_src_sel <= "01"; -- reuses the branch-target adder's PC+immediate output
+
+            when "1100111" => -- JALR
+                reg_write  <= '1';
+                alu_b_sel  <= '1';
+                alu_op     <= "0000"; -- target = rs1 + immediate
+                wb_sel     <= "10";   -- PC+4
+                pc_src_sel <= "10";   -- ALU-computed target
+
+            when "0110111" => -- LUI
+                reg_write <= '1';
+                alu_a_sel <= "10"; -- zero
+                alu_b_sel <= '1';
+                alu_op    <= "0000"; -- zero + immediate = immediate
+
+            when "0010111" => -- AUIPC
+                reg_write <= '1';
+                alu_a_sel <= "01"; -- pc
+                alu_b_sel <= '1';
+                alu_op    <= "0000"; -- pc + immediate
+
+            when "0001111" => -- MISC-MEM (fence)
+                null; -- no cache, no pipeline, nothing to order -- legally a no-op
+
+            when "1110011" => -- SYSTEM (ecall/ebreak)
+                null; -- minimal scope for v1: no privileged/trap infrastructure, treated as inert
+
+            when others =>
+                null; -- unrecognized opcode, defaults already cover it
         end case;
     end process;
 end architecture behavior;
