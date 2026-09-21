@@ -4,15 +4,17 @@ use ieee.numeric_std.all;
 
 entity control_unit is
     port(
-        instruction : in std_logic_vector(31 downto 0);
-        alu_zero    : in std_logic;
-        reg_write   : out std_logic;
-        mem_write   : out std_logic;
-        alu_op      : out std_logic_vector(3 downto 0);
-        alu_a_sel   : out std_logic_vector(1 downto 0);
-        alu_b_sel   : out std_logic;
-        wb_sel      : out std_logic_vector(1 downto 0);
-        pc_src_sel  : out std_logic_vector(1 downto 0)
+        instruction     : in std_logic_vector(31 downto 0);
+        alu_zero        : in std_logic;
+        reg_write       : out std_logic;
+        mem_write       : out std_logic;
+        alu_op          : out std_logic_vector(3 downto 0);
+        alu_a_sel       : out std_logic_vector(1 downto 0);
+        alu_b_sel       : out std_logic;
+        wb_sel          : out std_logic_vector(1 downto 0);
+        pc_src_sel      : out std_logic_vector(1 downto 0);
+        mem_size        : out std_logic_vector(1 downto 0);
+        load_unsigned   : out std_logic
     );
 end entity control_unit;
 
@@ -27,13 +29,15 @@ begin
     process(opcode, funct3, funct7, alu_zero)
     begin
         -- defaults
-        reg_write  <= '0';
-        mem_write  <= '0';
-        alu_op     <= "0000";
-        alu_a_sel  <= "00";
-        alu_b_sel  <= '0';
-        wb_sel     <= "00";
-        pc_src_sel <= "00";
+        reg_write       <= '0';
+        mem_write       <= '0';
+        alu_op          <= "0000";
+        alu_a_sel       <= "00";
+        alu_b_sel       <= '0';
+        wb_sel          <= "00";
+        pc_src_sel      <= "00";
+        mem_size        <= "00";
+        load_unsigned   <= '0';
 
         case opcode is
             when "0110011" => -- OP
@@ -83,16 +87,19 @@ begin
             when "0000011" => -- LOAD (lb/lh/lw/lbu/lhu)
                 -- word-only for now: data_memory has no byte/halfword support yet,
                 -- so every load funct3 currently produces identical control signals
-                reg_write <= '1';
-                alu_b_sel <= '1';
-                alu_op    <= "0000"; -- address = rs1 + immediate
-                wb_sel    <= "01";   -- writeback comes from memory, not the ALU
+                reg_write       <= '1';
+                alu_b_sel       <= '1';
+                alu_op          <= "0000"; -- address = rs1 + immediate
+                wb_sel          <= "01";   -- writeback comes from memory, not the ALU
+                mem_size        <= funct3(1 downto 0); -- bottom 2 bits determine byte, halfword, or fullword
+                load_unsigned   <= funct3(2); -- this bit determines signed vs unsigned
 
             when "0100011" => -- STORE (sb/sh/sw)
                 -- word-only for now, same limitation as LOAD
                 mem_write <= '1';
                 alu_b_sel <= '1';
                 alu_op    <= "0000"; -- address = rs1 + immediate
+                mem_size        <= funct3(1 downto 0); --bottom 2 bits determine byte, halfword, or fullword
 
             when "1100011" => -- BRANCH
                 case funct3 is
