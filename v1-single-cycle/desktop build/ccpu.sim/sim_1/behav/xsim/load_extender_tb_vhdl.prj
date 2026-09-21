@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../src/load_extender.vhd" \
+"../../../../../sim/load_extender_tb.vhd" \
+
+# Do not sort compile order
+nosort

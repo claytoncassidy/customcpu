@@ -1,7 +1,7 @@
 Vivado Simulator v2025.1.0
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: C:/Utility/Vivado2025.1/2025.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot control_unit_tb_behav xil_defaultlib.control_unit_tb -log elaborate.log 
+Running: C:/Utility/Vivado2025.1/2025.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip -L xpm --snapshot load_extender_tb_behav xil_defaultlib.load_extender_tb -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -12,6 +12,6 @@ Compiling package std.standard
 Compiling package std.textio
 Compiling package ieee.std_logic_1164
 Compiling package ieee.numeric_std
-Compiling architecture behavior of entity xil_defaultlib.control_unit [control_unit_default]
-Compiling architecture simulation of entity xil_defaultlib.control_unit_tb
-Built simulation snapshot control_unit_tb_behav
+Compiling architecture behavior of entity xil_defaultlib.load_extender [load_extender_default]
+Compiling architecture simulation of entity xil_defaultlib.load_extender_tb
+Built simulation snapshot load_extender_tb_behav

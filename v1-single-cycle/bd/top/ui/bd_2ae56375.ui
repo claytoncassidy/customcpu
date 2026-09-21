@@ -1,0 +1,27 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.625",
+   "Default View_TopLeft":"-315,-498",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0
+#  -string -flagsOSRD
+preplace inst program_counter_0 -pg 1 -lvl 1 -x -80 -y 180 -defaultsOSRD -resize 165 176
+preplace inst pc_plus_4_0 -pg 1 -lvl 2 -x 230 -y -380 -defaultsOSRD
+preplace inst instruction_memory_0 -pg 1 -lvl 2 -x 230 -y 170 -defaultsOSRD -resize 272 346
+preplace inst control_unit_0 -pg 1 -lvl 3 -x 540 -y -180 -defaultsOSRD
+preplace inst register_file_0 -pg 1 -lvl 4 -x 850 -y 170 -defaultsOSRD -resize 277 344
+preplace inst alu_0 -pg 1 -lvl 6 -x 1430 -y -70 -defaultsOSRD
+preplace inst data_memory_0 -pg 1 -lvl 7 -x 1710 -y -70 -defaultsOSRD
+preplace inst alu_a_mux_0 -pg 1 -lvl 5 -x 1150 -y -130 -defaultsOSRD
+preplace inst alu_b_mux_0 -pg 1 -lvl 5 -x 1150 -y 10 -defaultsOSRD
+preplace inst branch_adder_0 -pg 1 -lvl 6 -x 1430 -y -540 -defaultsOSRD
+preplace inst pc_src_mux_0 -pg 1 -lvl 7 -x 1710 -y -530 -defaultsOSRD
+preplace inst sign_extender_0 -pg 1 -lvl 4 -x 850 -y 540 -defaultsOSRD
+preplace inst writeback_mux_0 -pg 1 -lvl 8 -x 2010 -y -60 -defaultsOSRD
+preplace netloc program_counter_0_curr_addr 1 1 1 70 -380n
+preplace netloc instruction_memory_0_instruction 1 2 1 390 -190n
+levelinfo -pg 1 -390 -80 230 540 850 1150 1430 1710 2010 2150
+pagesize -pg 1 -db -bbox -sgen -390 -620 2150 600
+"
+}
+

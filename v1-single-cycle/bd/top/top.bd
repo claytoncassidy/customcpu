@@ -1,0 +1,544 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xc7a35tcpg236-1",
+      "name": "top",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2025.1"
+    },
+    "design_tree": {
+      "program_counter_0": "",
+      "pc_plus_4_0": "",
+      "instruction_memory_0": "",
+      "control_unit_0": "",
+      "register_file_0": "",
+      "alu_0": "",
+      "data_memory_0": "",
+      "alu_a_mux_0": "",
+      "alu_b_mux_0": "",
+      "branch_adder_0": "",
+      "pc_src_mux_0": "",
+      "sign_extender_0": "",
+      "writeback_mux_0": ""
+    },
+    "components": {
+      "program_counter_0": {
+        "vlnv": "xilinx.com:module_ref:program_counter:1.0",
+        "ip_revision": "1",
+        "xci_name": "top_program_counter_0_0",
+        "xci_path": "ip\\top_program_counter_0_0\\top_program_counter_0_0.xci",
+        "inst_hier_path": "program_counter_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "program_counter",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "next_addr": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "curr_addr": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "pc_plus_4_0": {
+        "vlnv": "xilinx.com:module_ref:pc_plus_4:1.0",
+        "ip_revision": "1",
+        "xci_name": "top_pc_plus_4_0_0",
+        "xci_path": "ip\\top_pc_plus_4_0_0\\top_pc_plus_4_0_0.xci",
+        "inst_hier_path": "pc_plus_4_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "pc_plus_4",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "pc_in": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "pc_out": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "instruction_memory_0": {
+        "vlnv": "xilinx.com:module_ref:instruction_memory:1.0",
+        "ip_revision": "1",
+        "xci_name": "top_instruction_memory_0_0",
+        "xci_path": "ip\\top_instruction_memory_0_0\\top_instruction_memory_0_0.xci",
+        "inst_hier_path": "instruction_memory_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "instruction_memory",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "address": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "instruction": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "control_unit_0": {
+        "vlnv": "xilinx.com:module_ref:control_unit:1.0",
+        "ip_revision": "1",
+        "xci_name": "top_control_unit_0_0",
+        "xci_path": "ip\\top_control_unit_0_0\\top_control_unit_0_0.xci",
+        "inst_hier_path": "control_unit_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "control_unit",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "instruction": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "alu_zero": {
+            "direction": "I"
+          },
+          "reg_write": {
+            "direction": "O"
+          },
+          "mem_write": {
+            "direction": "O"
+          },
+          "alu_op": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "alu_a_sel": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "alu_b_sel": {
+            "direction": "O"
+          },
+          "wb_sel": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "pc_src_sel": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "mem_size": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "load_unsigned": {
+            "direction": "O"
+          }
+        }
+      },
+      "register_file_0": {
+        "vlnv": "xilinx.com:module_ref:register_file:1.0",
+        "ip_revision": "1",
+        "xci_name": "top_register_file_0_0",
+        "xci_path": "ip\\top_register_file_0_0\\top_register_file_0_0.xci",
+        "inst_hier_path": "register_file_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "register_file",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              }
+            }
+          },
+          "read_addr1": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "read_addr2": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "write_addr": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "write_data": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "write_enable": {
+            "direction": "I"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "data1": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "data2": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "alu_0": {
+        "vlnv": "xilinx.com:module_ref:alu:1.0",
+        "ip_revision": "1",
+        "xci_name": "top_alu_0_0",
+        "xci_path": "ip\\top_alu_0_0\\top_alu_0_0.xci",
+        "inst_hier_path": "alu_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "alu",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "a": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "b": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "alu_op": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "result": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "zero": {
+            "direction": "O"
+          },
+          "invalid_op": {
+            "direction": "O"
+          },
+          "overflow": {
+            "direction": "O"
+          }
+        }
+      },
+      "data_memory_0": {
+        "vlnv": "xilinx.com:module_ref:data_memory:1.0",
+        "ip_revision": "1",
+        "xci_name": "top_data_memory_0_0",
+        "xci_path": "ip\\top_data_memory_0_0\\top_data_memory_0_0.xci",
+        "inst_hier_path": "data_memory_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "data_memory",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "address": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "write_enable": {
+            "direction": "I"
+          },
+          "write_data": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "data": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "mem_size": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          }
+        }
+      },
+      "alu_a_mux_0": {
+        "vlnv": "xilinx.com:module_ref:alu_a_mux:1.0",
+        "ip_revision": "1",
+        "xci_name": "top_alu_a_mux_0_0",
+        "xci_path": "ip\\top_alu_a_mux_0_0\\top_alu_a_mux_0_0.xci",
+        "inst_hier_path": "alu_a_mux_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "alu_a_mux",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "data1": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "pc": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "alu_a_sel": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "alu_a": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "alu_b_mux_0": {
+        "vlnv": "xilinx.com:module_ref:alu_b_mux:1.0",
+        "ip_revision": "1",
+        "xci_name": "top_alu_b_mux_0_0",
+        "xci_path": "ip\\top_alu_b_mux_0_0\\top_alu_b_mux_0_0.xci",
+        "inst_hier_path": "alu_b_mux_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "alu_b_mux",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "data2": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "immediate": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "alu_b_sel": {
+            "direction": "I"
+          },
+          "alu_b": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "branch_adder_0": {
+        "vlnv": "xilinx.com:module_ref:branch_adder:1.0",
+        "ip_revision": "1",
+        "xci_name": "top_branch_adder_0_0",
+        "xci_path": "ip\\top_branch_adder_0_0\\top_branch_adder_0_0.xci",
+        "inst_hier_path": "branch_adder_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "branch_adder",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "pc": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "immediate": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "target": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "pc_src_mux_0": {
+        "vlnv": "xilinx.com:module_ref:pc_src_mux:1.0",
+        "ip_revision": "1",
+        "xci_name": "top_pc_src_mux_0_0",
+        "xci_path": "ip\\top_pc_src_mux_0_0\\top_pc_src_mux_0_0.xci",
+        "inst_hier_path": "pc_src_mux_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "pc_src_mux",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "pc4": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "branch": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "jalr": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "pc_src_sel": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "pc_src": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "sign_extender_0": {
+        "vlnv": "xilinx.com:module_ref:sign_extender:1.0",
+        "ip_revision": "1",
+        "xci_name": "top_sign_extender_0_0",
+        "xci_path": "ip\\top_sign_extender_0_0\\top_sign_extender_0_0.xci",
+        "inst_hier_path": "sign_extender_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "sign_extender",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "instruction": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "extended": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "writeback_mux_0": {
+        "vlnv": "xilinx.com:module_ref:writeback_mux:1.0",
+        "ip_revision": "1",
+        "xci_name": "top_writeback_mux_0_0",
+        "xci_path": "ip\\top_writeback_mux_0_0\\top_writeback_mux_0_0.xci",
+        "inst_hier_path": "writeback_mux_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "writeback_mux",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "alu": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "data": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "pc4": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "wb_sel": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "writeback": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "instruction_memory_0_instruction": {
+        "ports": [
+          "instruction_memory_0/instruction",
+          "control_unit_0/instruction"
+        ]
+      },
+      "program_counter_0_curr_addr": {
+        "ports": [
+          "program_counter_0/curr_addr",
+          "instruction_memory_0/address",
+          "pc_plus_4_0/pc_in"
+        ]
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/src/control_unit.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'control_unit'
-INFO: [VRFC 10-163] Analyzing VHDL file "E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/sim/control_unit_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'control_unit_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/src/load_extender.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'load_extender'
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/sim/load_extender_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'load_extender_tb'
