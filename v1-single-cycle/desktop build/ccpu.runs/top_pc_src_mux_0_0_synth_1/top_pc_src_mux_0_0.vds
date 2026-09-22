@@ -1,0 +1,198 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Mon Sep 21 17:23:41 2026
+# Process ID         : 31940
+# Current directory  : E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/top_pc_src_mux_0_0_synth_1
+# Command line       : vivado.exe -log top_pc_src_mux_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_pc_src_mux_0_0.tcl
+# Log file           : E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/top_pc_src_mux_0_0_synth_1/top_pc_src_mux_0_0.vds
+# Journal file       : E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/top_pc_src_mux_0_0_synth_1\vivado.jou
+# Running On         : claytonsPC
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : AMD Ryzen 7 7800X3D 8-Core Processor           
+# CPU Frequency      : 4192 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 33515 MB
+# Swap memory        : 11651 MB
+# Total Virtual      : 45166 MB
+# Available Virtual  : 3792 MB
+#-----------------------------------------------------------
+source top_pc_src_mux_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Utility/Vivado2025.1/2025.1/Vivado/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.cache/ip 
+Command: synth_design -top top_pc_src_mux_0_0 -part xc7a35tcpg236-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 33992
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1007.988 ; gain = 497.273
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'top_pc_src_mux_0_0' [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_pc_src_mux_0_0/synth/top_pc_src_mux_0_0.vhd:66]
+INFO: [Synth 8-3491] module 'pc_src_mux' declared at 'E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/src/pc_src_mux.vhd:5' bound to instance 'U0' of component 'pc_src_mux' [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_pc_src_mux_0_0/synth/top_pc_src_mux_0_0.vhd:87]
+INFO: [Synth 8-638] synthesizing module 'pc_src_mux' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/src/pc_src_mux.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'pc_src_mux' (0#1) [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/src/pc_src_mux.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'top_pc_src_mux_0_0' (0#1) [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_pc_src_mux_0_0/synth/top_pc_src_mux_0_0.vhd:66]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 1112.508 ; gain = 601.793
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 1112.508 ; gain = 601.793
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 1112.508 ; gain = 601.793
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 1112.508 ; gain = 601.793
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input   32 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:19 . Memory (MB): peak = 1289.109 ; gain = 778.395
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:19 . Memory (MB): peak = 1304.871 ; gain = 794.156
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:19 . Memory (MB): peak = 1304.871 ; gain = 794.156
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:25 . Memory (MB): peak = 1524.434 ; gain = 1013.719
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:25 . Memory (MB): peak = 1524.434 ; gain = 1013.719
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:25 . Memory (MB): peak = 1524.434 ; gain = 1013.719
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:25 . Memory (MB): peak = 1524.434 ; gain = 1013.719
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:25 . Memory (MB): peak = 1524.434 ; gain = 1013.719
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:25 . Memory (MB): peak = 1524.434 ; gain = 1013.719
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT5 |    32|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+-----------+------+
+|      |Instance |Module     |Cells |
++------+---------+-----------+------+
+|1     |top      |           |    32|
+|2     |  U0     |pc_src_mux |    32|
++------+---------+-----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:25 . Memory (MB): peak = 1524.434 ; gain = 1013.719
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:25 . Memory (MB): peak = 1524.434 ; gain = 1013.719
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:25 . Memory (MB): peak = 1524.434 ; gain = 1013.719
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1539.449 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1647.727 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 7c3fb06
+INFO: [Common 17-83] Releasing license: Synthesis
+19 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.statsThreshold
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Common 17-1381] The checkpoint 'E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/top_pc_src_mux_0_0_synth_1/top_pc_src_mux_0_0.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file top_pc_src_mux_0_0_utilization_synth.rpt -pb top_pc_src_mux_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Sep 21 17:24:42 2026...

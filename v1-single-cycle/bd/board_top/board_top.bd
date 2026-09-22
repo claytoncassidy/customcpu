@@ -1,0 +1,263 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xC5B6D0CC9432ABE8",
+      "device": "xc7a35tcpg236-1",
+      "name": "board_top",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2025.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "top_wrapper_0": "",
+      "single_step_clock_0": "",
+      "led_select_mux_0": "",
+      "seven_seg_controller_0": "",
+      "hex_to_7seg_0": "",
+      "dp": ""
+    },
+    "ports": {
+      "board_clk": {
+        "direction": "I"
+      },
+      "btn_step": {
+        "direction": "I"
+      },
+      "reset": {
+        "direction": "I"
+      },
+      "led_sel": {
+        "direction": "I"
+      },
+      "dp": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "seg": {
+        "direction": "O",
+        "left": "6",
+        "right": "0"
+      },
+      "an": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      }
+    },
+    "components": {
+      "top_wrapper_0": {
+        "vlnv": "xilinx.com:module_ref:top_wrapper:1.0",
+        "ip_revision": "1",
+        "xci_name": "board_top_top_wrapper_0_0",
+        "xci_path": "ip\\board_top_top_wrapper_0_0\\board_top_top_wrapper_0_0.xci",
+        "inst_hier_path": "top_wrapper_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "top_wrapper",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk_0": {
+            "direction": "I"
+          },
+          "reset_0": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "writebackOUT": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "single_step_clock_0": {
+        "vlnv": "xilinx.com:module_ref:single_step_clock:1.0",
+        "ip_revision": "1",
+        "xci_name": "board_top_single_step_clock_0_0",
+        "xci_path": "ip\\board_top_single_step_clock_0_0\\board_top_single_step_clock_0_0.xci",
+        "inst_hier_path": "single_step_clock_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "single_step_clock",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "btn_in": {
+            "direction": "I"
+          },
+          "step_pulse": {
+            "direction": "O"
+          }
+        }
+      },
+      "led_select_mux_0": {
+        "vlnv": "xilinx.com:module_ref:led_select_mux:1.0",
+        "ip_revision": "1",
+        "xci_name": "board_top_led_select_mux_0_0",
+        "xci_path": "ip\\board_top_led_select_mux_0_0\\board_top_led_select_mux_0_0.xci",
+        "inst_hier_path": "led_select_mux_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "led_select_mux",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "writeback": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "led_sel": {
+            "direction": "I"
+          },
+          "led": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          }
+        }
+      },
+      "seven_seg_controller_0": {
+        "vlnv": "xilinx.com:module_ref:seven_seg_controller:1.0",
+        "ip_revision": "1",
+        "xci_name": "board_top_seven_seg_controller_0_0",
+        "xci_path": "ip\\board_top_seven_seg_controller_0_0\\board_top_seven_seg_controller_0_0.xci",
+        "inst_hier_path": "seven_seg_controller_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "seven_seg_controller",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "value": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "hex_digit": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "an": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "hex_to_7seg_0": {
+        "vlnv": "xilinx.com:module_ref:hex_to_7seg:1.0",
+        "ip_revision": "1",
+        "xci_name": "board_top_hex_to_7seg_0_0",
+        "xci_path": "ip\\board_top_hex_to_7seg_0_0\\board_top_hex_to_7seg_0_0.xci",
+        "inst_hier_path": "hex_to_7seg_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "hex_to_7seg",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "hex_digit": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "seg": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          }
+        }
+      },
+      "dp": {
+        "vlnv": "xilinx.com:inline_hdl:ilconstant:1.0"
+      }
+    },
+    "nets": {
+      "board_clk_1": {
+        "ports": [
+          "board_clk",
+          "single_step_clock_0/clk",
+          "seven_seg_controller_0/clk"
+        ]
+      },
+      "btn_step_1": {
+        "ports": [
+          "btn_step",
+          "single_step_clock_0/btn_in"
+        ]
+      },
+      "dp_dout": {
+        "ports": [
+          "dp/dout",
+          "dp"
+        ]
+      },
+      "hex_to_7seg_0_seg": {
+        "ports": [
+          "hex_to_7seg_0/seg",
+          "seg"
+        ]
+      },
+      "led_sel_1": {
+        "ports": [
+          "led_sel",
+          "led_select_mux_0/led_sel"
+        ]
+      },
+      "led_select_mux_0_led": {
+        "ports": [
+          "led_select_mux_0/led",
+          "seven_seg_controller_0/value"
+        ]
+      },
+      "reset_1": {
+        "ports": [
+          "reset",
+          "top_wrapper_0/reset_0"
+        ]
+      },
+      "seven_seg_controller_0_an": {
+        "ports": [
+          "seven_seg_controller_0/an",
+          "an"
+        ]
+      },
+      "seven_seg_controller_0_hex_digit": {
+        "ports": [
+          "seven_seg_controller_0/hex_digit",
+          "hex_to_7seg_0/hex_digit"
+        ]
+      },
+      "single_step_clock_0_step_pulse": {
+        "ports": [
+          "single_step_clock_0/step_pulse",
+          "top_wrapper_0/clk_0"
+        ]
+      },
+      "top_wrapper_0_writebackOUT": {
+        "ports": [
+          "top_wrapper_0/writebackOUT",
+          "led_select_mux_0/writeback"
+        ]
+      }
+    }
+  }
+}

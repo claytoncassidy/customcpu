@@ -38,7 +38,7 @@ architecture simulation of load_extender_tb is
         (raw_data => x"12345678", mem_size => "10", load_unsigned => '0', extended => x"12345678"),
         (raw_data => x"12345678", mem_size => "10", load_unsigned => '1', extended => x"12345678"),
 
-        -- unused mem_size encoding: defaults to others, output forced to zero
+        -- unused mem_size encoding:  to others, output forced to zero
         (raw_data => x"FFFFFFFF", mem_size => "11", load_unsigned => '0', extended => x"00000000")
     );
 

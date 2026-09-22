@@ -1,12 +1,13 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x0",
+      "boundary_crc": "0x3884DA5138C9F682",
       "device": "xc7a35tcpg236-1",
       "name": "top",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2025.1"
+      "tool_version": "2025.1",
+      "validated": "true"
     },
     "design_tree": {
       "program_counter_0": "",
@@ -21,7 +22,69 @@
       "branch_adder_0": "",
       "pc_src_mux_0": "",
       "sign_extender_0": "",
-      "writeback_mux_0": ""
+      "writeback_mux_0": "",
+      "load_extender_0": "",
+      "ilslice_0": "",
+      "ilslice_1": "",
+      "ilslice_2": ""
+    },
+    "ports": {
+      "clk_0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "reset_0",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "top_clk_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "reset_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "writebackOUT": {
+        "type": "data",
+        "direction": "O",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      }
     },
     "components": {
       "program_counter_0": {
@@ -44,6 +107,10 @@
               "ASSOCIATED_RESET": {
                 "value": "reset",
                 "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "top_clk_0",
+                "value_src": "default_prop"
               }
             }
           },
@@ -193,23 +260,45 @@
               "ASSOCIATED_RESET": {
                 "value": "reset",
                 "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "top_clk_0",
+                "value_src": "default_prop"
               }
             }
           },
           "read_addr1": {
             "direction": "I",
             "left": "4",
-            "right": "0"
+            "right": "0",
+            "parameters": {
+              "PortWidth": {
+                "value": "5",
+                "value_src": "user_prop"
+              }
+            }
           },
           "read_addr2": {
             "direction": "I",
             "left": "4",
-            "right": "0"
+            "right": "0",
+            "parameters": {
+              "PortWidth": {
+                "value": "5",
+                "value_src": "user_prop"
+              }
+            }
           },
           "write_addr": {
             "direction": "I",
             "left": "4",
-            "right": "0"
+            "right": "0",
+            "parameters": {
+              "PortWidth": {
+                "value": "5",
+                "value_src": "user_prop"
+              }
+            }
           },
           "write_data": {
             "direction": "I",
@@ -294,7 +383,13 @@
         "ports": {
           "clk": {
             "type": "clk",
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "top_clk_0",
+                "value_src": "default_prop"
+              }
+            }
           },
           "address": {
             "direction": "I",
@@ -523,20 +618,267 @@
             "right": "0"
           }
         }
+      },
+      "load_extender_0": {
+        "vlnv": "xilinx.com:module_ref:load_extender:1.0",
+        "ip_revision": "1",
+        "xci_name": "top_load_extender_0_0",
+        "xci_path": "ip\\top_load_extender_0_0\\top_load_extender_0_0.xci",
+        "inst_hier_path": "load_extender_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "load_extender",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "raw_data": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "mem_size": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "load_unsigned": {
+            "direction": "I"
+          },
+          "extended": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "ilslice_0": {
+        "vlnv": "xilinx.com:inline_hdl:ilslice:1.0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "19"
+          },
+          "DIN_TO": {
+            "value": "15"
+          },
+          "DIN_WIDTH": {
+            "value": "32"
+          }
+        }
+      },
+      "ilslice_1": {
+        "vlnv": "xilinx.com:inline_hdl:ilslice:1.0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "24"
+          },
+          "DIN_TO": {
+            "value": "20"
+          }
+        }
+      },
+      "ilslice_2": {
+        "vlnv": "xilinx.com:inline_hdl:ilslice:1.0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "11"
+          },
+          "DIN_TO": {
+            "value": "7"
+          }
+        }
       }
     },
     "nets": {
+      "alu_0_result": {
+        "ports": [
+          "alu_0/result",
+          "data_memory_0/address",
+          "pc_src_mux_0/jalr",
+          "writeback_mux_0/alu"
+        ]
+      },
+      "alu_0_zero": {
+        "ports": [
+          "alu_0/zero",
+          "control_unit_0/alu_zero"
+        ]
+      },
+      "alu_a_mux_0_alu_a": {
+        "ports": [
+          "alu_a_mux_0/alu_a",
+          "alu_0/a"
+        ]
+      },
+      "alu_b_mux_0_alu_b": {
+        "ports": [
+          "alu_b_mux_0/alu_b",
+          "alu_0/b"
+        ]
+      },
+      "branch_adder_0_target": {
+        "ports": [
+          "branch_adder_0/target",
+          "pc_src_mux_0/branch"
+        ]
+      },
+      "clk_0_1": {
+        "ports": [
+          "clk_0",
+          "program_counter_0/clk",
+          "data_memory_0/clk",
+          "register_file_0/clk"
+        ]
+      },
+      "control_unit_0_alu_a_sel": {
+        "ports": [
+          "control_unit_0/alu_a_sel",
+          "alu_a_mux_0/alu_a_sel"
+        ]
+      },
+      "control_unit_0_alu_b_sel": {
+        "ports": [
+          "control_unit_0/alu_b_sel",
+          "alu_b_mux_0/alu_b_sel"
+        ]
+      },
+      "control_unit_0_alu_op": {
+        "ports": [
+          "control_unit_0/alu_op",
+          "alu_0/alu_op"
+        ]
+      },
+      "control_unit_0_load_unsigned": {
+        "ports": [
+          "control_unit_0/load_unsigned",
+          "load_extender_0/load_unsigned"
+        ]
+      },
+      "control_unit_0_mem_size": {
+        "ports": [
+          "control_unit_0/mem_size",
+          "data_memory_0/mem_size",
+          "load_extender_0/mem_size"
+        ]
+      },
+      "control_unit_0_mem_write": {
+        "ports": [
+          "control_unit_0/mem_write",
+          "data_memory_0/write_enable"
+        ]
+      },
+      "control_unit_0_pc_src_sel": {
+        "ports": [
+          "control_unit_0/pc_src_sel",
+          "pc_src_mux_0/pc_src_sel"
+        ]
+      },
+      "control_unit_0_reg_write": {
+        "ports": [
+          "control_unit_0/reg_write",
+          "register_file_0/write_enable"
+        ]
+      },
+      "control_unit_0_wb_sel": {
+        "ports": [
+          "control_unit_0/wb_sel",
+          "writeback_mux_0/wb_sel"
+        ]
+      },
+      "data_memory_0_data": {
+        "ports": [
+          "data_memory_0/data",
+          "load_extender_0/raw_data"
+        ]
+      },
+      "ilslice_0_Dout": {
+        "ports": [
+          "ilslice_0/Dout",
+          "register_file_0/read_addr1"
+        ]
+      },
+      "ilslice_1_Dout": {
+        "ports": [
+          "ilslice_1/Dout",
+          "register_file_0/read_addr2"
+        ]
+      },
+      "ilslice_2_Dout": {
+        "ports": [
+          "ilslice_2/Dout",
+          "register_file_0/write_addr"
+        ]
+      },
       "instruction_memory_0_instruction": {
         "ports": [
           "instruction_memory_0/instruction",
-          "control_unit_0/instruction"
+          "ilslice_0/Din",
+          "ilslice_1/Din",
+          "ilslice_2/Din",
+          "control_unit_0/instruction",
+          "sign_extender_0/instruction"
+        ]
+      },
+      "load_extender_0_extended": {
+        "ports": [
+          "load_extender_0/extended",
+          "writeback_mux_0/data"
+        ]
+      },
+      "pc_plus_4_0_pc_out": {
+        "ports": [
+          "pc_plus_4_0/pc_out",
+          "pc_src_mux_0/pc4",
+          "writeback_mux_0/pc4"
+        ]
+      },
+      "pc_src_mux_0_pc_src": {
+        "ports": [
+          "pc_src_mux_0/pc_src",
+          "program_counter_0/next_addr"
         ]
       },
       "program_counter_0_curr_addr": {
         "ports": [
           "program_counter_0/curr_addr",
+          "pc_plus_4_0/pc_in",
           "instruction_memory_0/address",
-          "pc_plus_4_0/pc_in"
+          "alu_a_mux_0/pc",
+          "branch_adder_0/pc"
+        ]
+      },
+      "register_file_0_data1": {
+        "ports": [
+          "register_file_0/data1",
+          "alu_a_mux_0/data1"
+        ]
+      },
+      "register_file_0_data2": {
+        "ports": [
+          "register_file_0/data2",
+          "alu_b_mux_0/data2",
+          "data_memory_0/write_data"
+        ]
+      },
+      "reset_0_1": {
+        "ports": [
+          "reset_0",
+          "program_counter_0/reset",
+          "register_file_0/reset"
+        ]
+      },
+      "sign_extender_0_extended": {
+        "ports": [
+          "sign_extender_0/extended",
+          "alu_b_mux_0/immediate",
+          "branch_adder_0/immediate"
+        ]
+      },
+      "writeback_mux_0_writeback": {
+        "ports": [
+          "writeback_mux_0/writeback",
+          "register_file_0/write_data",
+          "writebackOUT"
         ]
       }
     }

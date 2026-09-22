@@ -14,6 +14,7 @@ architecture simulation of instruction_memory_tb is
         instruction : std_logic_vector(31 downto 0);
     end record;
 
+    -- when values are placed into instruciton memory directly, this testbench does not work
     type test_case_array is array (natural range <>) of test_case;
     constant test_vectors : test_case_array := (
         -- word 0

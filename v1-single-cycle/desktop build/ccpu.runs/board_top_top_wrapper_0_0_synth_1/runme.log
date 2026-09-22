@@ -1,0 +1,297 @@
+
+*** Running vivado
+    with args -log board_top_top_wrapper_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source board_top_top_wrapper_0_0.tcl
+
+
+
+****** Vivado v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Tue Sep 22 00:46:03 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source board_top_top_wrapper_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Utility/Vivado2025.1/2025.1/Vivado/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.cache/ip 
+Command: synth_design -top board_top_top_wrapper_0_0 -part xc7a35tcpg236-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 44948
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1189.605 ; gain = 491.512
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'board_top_top_wrapper_0_0' [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/board_top/ip/board_top_top_wrapper_0_0/synth/board_top_top_wrapper_0_0.vhd:64]
+INFO: [Synth 8-3491] module 'top_wrapper' declared at 'E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/hdl/top_wrapper.vhd:15' bound to instance 'U0' of component 'top_wrapper' [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/board_top/ip/board_top_top_wrapper_0_0/synth/board_top_top_wrapper_0_0.vhd:89]
+INFO: [Synth 8-638] synthesizing module 'top_wrapper' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/hdl/top_wrapper.vhd:23]
+INFO: [Synth 8-3491] module 'top' declared at 'E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/synth/top.vhd:15' bound to instance 'top_i' of component 'top' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/hdl/top_wrapper.vhd:32]
+INFO: [Synth 8-638] synthesizing module 'top' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/synth/top.vhd:27]
+INFO: [Synth 8-3491] module 'top_alu_0_0' declared at 'E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_alu_0_0_stub.vhdl:6' bound to instance 'alu_0' of component 'top_alu_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/synth/top.vhd:191]
+INFO: [Synth 8-638] synthesizing module 'top_alu_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_alu_0_0_stub.vhdl:27]
+INFO: [Synth 8-3491] module 'top_alu_a_mux_0_0' declared at 'E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_alu_a_mux_0_0_stub.vhdl:6' bound to instance 'alu_a_mux_0' of component 'top_alu_a_mux_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/synth/top.vhd:201]
+INFO: [Synth 8-638] synthesizing module 'top_alu_a_mux_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_alu_a_mux_0_0_stub.vhdl:24]
+INFO: [Synth 8-3491] module 'top_alu_b_mux_0_0' declared at 'E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_alu_b_mux_0_0_stub.vhdl:6' bound to instance 'alu_b_mux_0' of component 'top_alu_b_mux_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/synth/top.vhd:208]
+INFO: [Synth 8-638] synthesizing module 'top_alu_b_mux_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_alu_b_mux_0_0_stub.vhdl:24]
+INFO: [Synth 8-3491] module 'top_branch_adder_0_0' declared at 'E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_branch_adder_0_0_stub.vhdl:6' bound to instance 'branch_adder_0' of component 'top_branch_adder_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/synth/top.vhd:215]
+INFO: [Synth 8-638] synthesizing module 'top_branch_adder_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_branch_adder_0_0_stub.vhdl:23]
+INFO: [Synth 8-3491] module 'top_control_unit_0_0' declared at 'E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_control_unit_0_0_stub.vhdl:6' bound to instance 'control_unit_0' of component 'top_control_unit_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/synth/top.vhd:221]
+INFO: [Synth 8-638] synthesizing module 'top_control_unit_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_control_unit_0_0_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'top_data_memory_0_0' declared at 'E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_data_memory_0_0_stub.vhdl:6' bound to instance 'data_memory_0' of component 'top_data_memory_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/synth/top.vhd:235]
+INFO: [Synth 8-638] synthesizing module 'top_data_memory_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_data_memory_0_0_stub.vhdl:26]
+INFO: [Synth 8-3491] module 'top_instruction_memory_0_0' declared at 'E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_instruction_memory_0_0_stub.vhdl:6' bound to instance 'instruction_memory_0' of component 'top_instruction_memory_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/synth/top.vhd:247]
+INFO: [Synth 8-638] synthesizing module 'top_instruction_memory_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_instruction_memory_0_0_stub.vhdl:22]
+INFO: [Synth 8-3491] module 'top_load_extender_0_0' declared at 'E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_load_extender_0_0_stub.vhdl:6' bound to instance 'load_extender_0' of component 'top_load_extender_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/synth/top.vhd:252]
+INFO: [Synth 8-638] synthesizing module 'top_load_extender_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_load_extender_0_0_stub.vhdl:24]
+INFO: [Synth 8-3491] module 'top_pc_plus_4_0_0' declared at 'E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_pc_plus_4_0_0_stub.vhdl:6' bound to instance 'pc_plus_4_0' of component 'top_pc_plus_4_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/synth/top.vhd:259]
+INFO: [Synth 8-638] synthesizing module 'top_pc_plus_4_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_pc_plus_4_0_0_stub.vhdl:22]
+INFO: [Synth 8-3491] module 'top_pc_src_mux_0_0' declared at 'E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_pc_src_mux_0_0_stub.vhdl:6' bound to instance 'pc_src_mux_0' of component 'top_pc_src_mux_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/synth/top.vhd:264]
+INFO: [Synth 8-638] synthesizing module 'top_pc_src_mux_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_pc_src_mux_0_0_stub.vhdl:25]
+INFO: [Synth 8-3491] module 'top_program_counter_0_0' declared at 'E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_program_counter_0_0_stub.vhdl:6' bound to instance 'program_counter_0' of component 'top_program_counter_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/synth/top.vhd:272]
+INFO: [Synth 8-638] synthesizing module 'top_program_counter_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_program_counter_0_0_stub.vhdl:24]
+INFO: [Synth 8-3491] module 'top_register_file_0_0' declared at 'E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_register_file_0_0_stub.vhdl:6' bound to instance 'register_file_0' of component 'top_register_file_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/synth/top.vhd:279]
+INFO: [Synth 8-638] synthesizing module 'top_register_file_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_register_file_0_0_stub.vhdl:29]
+INFO: [Synth 8-3491] module 'top_sign_extender_0_0' declared at 'E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_sign_extender_0_0_stub.vhdl:6' bound to instance 'sign_extender_0' of component 'top_sign_extender_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/synth/top.vhd:291]
+INFO: [Synth 8-638] synthesizing module 'top_sign_extender_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_sign_extender_0_0_stub.vhdl:22]
+INFO: [Synth 8-3491] module 'top_writeback_mux_0_0' declared at 'E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_writeback_mux_0_0_stub.vhdl:6' bound to instance 'writeback_mux_0' of component 'top_writeback_mux_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/synth/top.vhd:296]
+INFO: [Synth 8-638] synthesizing module 'top_writeback_mux_0_0' [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/.Xil/Vivado-14504-claytonsPC/realtime/top_writeback_mux_0_0_stub.vhdl:25]
+INFO: [Synth 8-256] done synthesizing module 'top' (0#1) [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/synth/top.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'top_wrapper' (0#1) [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/hdl/top_wrapper.vhd:23]
+INFO: [Synth 8-256] done synthesizing module 'board_top_top_wrapper_0_0' (0#1) [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/board_top/ip/board_top_top_wrapper_0_0/synth/board_top_top_wrapper_0_0.vhd:64]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1296.832 ; gain = 598.738
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1296.832 ; gain = 598.738
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1296.832 ; gain = 598.738
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1296.832 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_program_counter_0_0/top_program_counter_0_0/top_program_counter_0_0_in_context.xdc] for cell 'U0/top_i/program_counter_0'
+Finished Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_program_counter_0_0/top_program_counter_0_0/top_program_counter_0_0_in_context.xdc] for cell 'U0/top_i/program_counter_0'
+Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_pc_plus_4_0_0/top_pc_plus_4_0_0/top_pc_plus_4_0_0_in_context.xdc] for cell 'U0/top_i/pc_plus_4_0'
+Finished Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_pc_plus_4_0_0/top_pc_plus_4_0_0/top_pc_plus_4_0_0_in_context.xdc] for cell 'U0/top_i/pc_plus_4_0'
+Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_instruction_memory_0_0/top_instruction_memory_0_0/top_instruction_memory_0_0_in_context.xdc] for cell 'U0/top_i/instruction_memory_0'
+Finished Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_instruction_memory_0_0/top_instruction_memory_0_0/top_instruction_memory_0_0_in_context.xdc] for cell 'U0/top_i/instruction_memory_0'
+Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_control_unit_0_0/top_control_unit_0_0/top_control_unit_0_0_in_context.xdc] for cell 'U0/top_i/control_unit_0'
+Finished Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_control_unit_0_0/top_control_unit_0_0/top_control_unit_0_0_in_context.xdc] for cell 'U0/top_i/control_unit_0'
+Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_register_file_0_0/top_register_file_0_0/top_register_file_0_0_in_context.xdc] for cell 'U0/top_i/register_file_0'
+Finished Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_register_file_0_0/top_register_file_0_0/top_register_file_0_0_in_context.xdc] for cell 'U0/top_i/register_file_0'
+Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_alu_0_0/top_alu_0_0/top_alu_0_0_in_context.xdc] for cell 'U0/top_i/alu_0'
+Finished Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_alu_0_0/top_alu_0_0/top_alu_0_0_in_context.xdc] for cell 'U0/top_i/alu_0'
+Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_data_memory_0_0/top_data_memory_0_0/top_data_memory_0_0_in_context.xdc] for cell 'U0/top_i/data_memory_0'
+Finished Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_data_memory_0_0/top_data_memory_0_0/top_data_memory_0_0_in_context.xdc] for cell 'U0/top_i/data_memory_0'
+Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_alu_a_mux_0_0/top_alu_a_mux_0_0/top_alu_a_mux_0_0_in_context.xdc] for cell 'U0/top_i/alu_a_mux_0'
+Finished Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_alu_a_mux_0_0/top_alu_a_mux_0_0/top_alu_a_mux_0_0_in_context.xdc] for cell 'U0/top_i/alu_a_mux_0'
+Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_alu_b_mux_0_0/top_alu_b_mux_0_0/top_alu_b_mux_0_0_in_context.xdc] for cell 'U0/top_i/alu_b_mux_0'
+Finished Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_alu_b_mux_0_0/top_alu_b_mux_0_0/top_alu_b_mux_0_0_in_context.xdc] for cell 'U0/top_i/alu_b_mux_0'
+Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_branch_adder_0_0/top_branch_adder_0_0/top_branch_adder_0_0_in_context.xdc] for cell 'U0/top_i/branch_adder_0'
+Finished Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_branch_adder_0_0/top_branch_adder_0_0/top_branch_adder_0_0_in_context.xdc] for cell 'U0/top_i/branch_adder_0'
+Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_pc_src_mux_0_0/top_pc_src_mux_0_0/top_pc_src_mux_0_0_in_context.xdc] for cell 'U0/top_i/pc_src_mux_0'
+Finished Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_pc_src_mux_0_0/top_pc_src_mux_0_0/top_pc_src_mux_0_0_in_context.xdc] for cell 'U0/top_i/pc_src_mux_0'
+Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_sign_extender_0_0/top_sign_extender_0_0/top_sign_extender_0_0_in_context.xdc] for cell 'U0/top_i/sign_extender_0'
+Finished Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_sign_extender_0_0/top_sign_extender_0_0/top_sign_extender_0_0_in_context.xdc] for cell 'U0/top_i/sign_extender_0'
+Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_writeback_mux_0_0/top_writeback_mux_0_0/top_writeback_mux_0_0_in_context.xdc] for cell 'U0/top_i/writeback_mux_0'
+Finished Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_writeback_mux_0_0/top_writeback_mux_0_0/top_writeback_mux_0_0_in_context.xdc] for cell 'U0/top_i/writeback_mux_0'
+Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_load_extender_0_0/top_load_extender_0_0/top_load_extender_0_0_in_context.xdc] for cell 'U0/top_i/load_extender_0'
+Finished Parsing XDC File [e:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/ip/top_load_extender_0_0/top_load_extender_0_0/top_load_extender_0_0_in_context.xdc] for cell 'U0/top_i/load_extender_0'
+Parsing XDC File [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1296.832 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1296.832 ; gain = 0.000
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1296.832 ; gain = 598.738
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1296.832 ; gain = 598.738
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1296.832 ; gain = 598.738
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1296.832 ; gain = 598.738
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1309.988 ; gain = 611.895
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1482.434 ; gain = 784.340
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1482.695 ; gain = 784.602
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1492.910 ; gain = 794.816
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1727.410 ; gain = 1029.316
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1727.410 ; gain = 1029.316
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1727.410 ; gain = 1029.316
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1727.410 ; gain = 1029.316
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1727.410 ; gain = 1029.316
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1727.410 ; gain = 1029.316
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+---------------------------+----------+
+|      |BlackBox name              |Instances |
++------+---------------------------+----------+
+|1     |top_alu_0_0                |         1|
+|2     |top_alu_a_mux_0_0          |         1|
+|3     |top_alu_b_mux_0_0          |         1|
+|4     |top_branch_adder_0_0       |         1|
+|5     |top_control_unit_0_0       |         1|
+|6     |top_data_memory_0_0        |         1|
+|7     |top_instruction_memory_0_0 |         1|
+|8     |top_load_extender_0_0      |         1|
+|9     |top_pc_plus_4_0_0          |         1|
+|10    |top_pc_src_mux_0_0         |         1|
+|11    |top_program_counter_0_0    |         1|
+|12    |top_register_file_0_0      |         1|
+|13    |top_sign_extender_0_0      |         1|
+|14    |top_writeback_mux_0_0      |         1|
++------+---------------------------+----------+
+
+Report Cell Usage: 
++------+--------------------------------+------+
+|      |Cell                            |Count |
++------+--------------------------------+------+
+|1     |top_alu_0_0_bbox                |     1|
+|2     |top_alu_a_mux_0_0_bbox          |     1|
+|3     |top_alu_b_mux_0_0_bbox          |     1|
+|4     |top_branch_adder_0_0_bbox       |     1|
+|5     |top_control_unit_0_0_bbox       |     1|
+|6     |top_data_memory_0_0_bbox        |     1|
+|7     |top_instruction_memory_0_0_bbox |     1|
+|8     |top_load_extender_0_0_bbox      |     1|
+|9     |top_pc_plus_4_0_0_bbox          |     1|
+|10    |top_pc_src_mux_0_0_bbox         |     1|
+|11    |top_program_counter_0_0_bbox    |     1|
+|12    |top_register_file_0_0_bbox      |     1|
+|13    |top_sign_extender_0_0_bbox      |     1|
+|14    |top_writeback_mux_0_0_bbox      |     1|
++------+--------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1727.410 ; gain = 1029.316
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 1727.410 ; gain = 1029.316
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1727.410 ; gain = 1029.316
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1727.410 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1731.312 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 87895893
+INFO: [Common 17-83] Releasing license: Synthesis
+52 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.statsThreshold
+INFO: [Coretcl 2-1174] Renamed 16 cell refs.
+INFO: [Common 17-1381] The checkpoint 'E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.runs/board_top_top_wrapper_0_0_synth_1/board_top_top_wrapper_0_0.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file board_top_top_wrapper_0_0_utilization_synth.rpt -pb board_top_top_wrapper_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Sep 22 00:46:37 2026...

@@ -2,4 +2,5 @@
 defaultlib.files = [
   'v1-single-cycle/src/*.vhd',
   'v1-single-cycle/sim/*.vhd',
+  'v1-single-cycle/bd/top/hdl/*.vhd',
 ]

@@ -2,3 +2,6 @@ Running: xsim.dir/load_extender_tb_behav/xsimk.exe -simmode gui -wdb load_extend
 Design successfully loaded
 Design Loading Memory Usage: 11824 KB (Peak: 11824 KB)
 Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 13060 KB (Peak: 13060 KB)
+Simulation CPU Usage: 30 ms
