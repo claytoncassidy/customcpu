@@ -4,3 +4,7 @@ defaultlib.files = [
   'v1-single-cycle/sim/*.vhd',
   'v1-single-cycle/bd/top/hdl/*.vhd',
 ]
+
+unisim.files = [
+  'C:/Xilinx/Vivado/2024.1/data/vhdl/src/unisims/unisim_VCOMP.vhd',
+]
