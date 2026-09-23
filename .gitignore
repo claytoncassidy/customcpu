@@ -1,0 +1,4 @@
+# Vivado project builds (laptop + desktop) -- fully regeneratable from src/, sim/,
+# constraints/, and the bd/ Block Design files; see CLAUDE.md's reproducibility notes.
+v1-single-cycle/build/
+v1-single-cycle/desktop build/

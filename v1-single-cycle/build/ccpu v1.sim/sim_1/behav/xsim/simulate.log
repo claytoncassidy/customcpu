@@ -1,4 +1,0 @@
-Time resolution is 1 ps
-Note: all tests complete
-Time: 92 ns  Iteration: 0  Process: /program_counter_tb/test_loop  File: C:/Programming/Personal/Custom CPU/v1-single-cycle/sim/program_counter_tb.vhd
-The simulator has terminated in an unexpected manner with exit code 1073807364.  Please review the simulation log (xsim.log) for details.

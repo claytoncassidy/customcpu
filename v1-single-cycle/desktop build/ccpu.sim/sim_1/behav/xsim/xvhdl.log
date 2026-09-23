@@ -1,6 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/desktop build/ccpu.ip_user_files/bd/top/sim/top.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'top'
-INFO: [VRFC 10-163] Analyzing VHDL file "E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/bd/top/hdl/top_wrapper.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'top_wrapper'
-INFO: [VRFC 10-163] Analyzing VHDL file "E:/Programming/Personal/Custom CPU/customcpu/v1-single-cycle/sim/top_wrapper_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'top_wrapper_tb'
