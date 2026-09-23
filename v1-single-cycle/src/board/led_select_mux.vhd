@@ -1,3 +1,4 @@
+-- picks which half of the 32-bit writeback value shows on the LEDs
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;

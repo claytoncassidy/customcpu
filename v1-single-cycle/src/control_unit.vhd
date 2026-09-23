@@ -1,11 +1,12 @@
+-- decodes the instruction and handles every control signal in the datapath
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity control_unit is
     port(
-        instruction     : in std_logic_vector(31 downto 0);
-        alu_zero        : in std_logic;
+        instruction     : in  std_logic_vector(31 downto 0);
+        alu_zero        : in  std_logic;
         reg_write       : out std_logic;
         mem_write       : out std_logic;
         alu_op          : out std_logic_vector(3 downto 0);
@@ -19,9 +20,9 @@ entity control_unit is
 end entity control_unit;
 
 architecture behavior of control_unit is
-signal opcode   : std_logic_vector(6 downto 0);
-signal funct3   : std_logic_vector(2 downto 0);
-signal funct7   : std_logic_vector(6 downto 0);
+    signal opcode   : std_logic_vector(6 downto 0);
+    signal funct3   : std_logic_vector(2 downto 0);
+    signal funct7   : std_logic_vector(6 downto 0);
 begin
     opcode <= instruction(6 downto 0);
     funct3 <= instruction(14 downto 12);
@@ -92,14 +93,14 @@ begin
                 alu_op          <= "0000"; -- address = rs1 + immediate
                 wb_sel          <= "01";   -- writeback comes from memory, not the ALU
                 mem_size        <= funct3(1 downto 0); -- bottom 2 bits determine byte, halfword, or fullword
-                load_unsigned   <= funct3(2); -- this bit determines signed vs unsigned
+                load_unsigned   <= funct3(2);           -- this bit determines signed vs unsigned
 
             when "0100011" => -- STORE (sb/sh/sw)
                 -- word-only for now, same limitation as LOAD
                 mem_write <= '1';
                 alu_b_sel <= '1';
                 alu_op    <= "0000"; -- address = rs1 + immediate
-                mem_size        <= funct3(1 downto 0); --bottom 2 bits determine byte, halfword, or fullword
+                mem_size  <= funct3(1 downto 0); -- bottom 2 bits determine byte, halfword, or fullword
 
             when "1100011" => -- BRANCH
                 case funct3 is
@@ -168,6 +169,7 @@ begin
 
             when others =>
                 null; -- unrecognized opcode, defaults already cover it
+
         end case;
     end process;
 end architecture behavior;

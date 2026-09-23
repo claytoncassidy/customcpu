@@ -45,7 +45,7 @@ architecture simulation of control_unit_tb is
          reg_write => '1', mem_write => '0', alu_op => "1001", alu_a_sel => "00", alu_b_sel => '0',
          wb_sel => "00", pc_src_sel => "00", mem_size => "00", load_unsigned => '0'), -- sra
 
-        -- OP-IMM: addi (plain), srli/srai (split by funct7(5))
+        -- OP-IMM: addi, srli/srai (split by funct7(5))
         (instruction => "0000000" & "00000" & "00000" & "000" & "00000" & "0010011", alu_zero => '0',
          reg_write => '1', mem_write => '0', alu_op => "0000", alu_a_sel => "00", alu_b_sel => '1',
          wb_sel => "00", pc_src_sel => "00", mem_size => "00", load_unsigned => '0'), -- addi

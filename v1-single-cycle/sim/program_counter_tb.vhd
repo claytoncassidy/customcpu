@@ -14,8 +14,8 @@ architecture simulation of program_counter_tb is
 begin
     uut : entity work.program_counter
         port map(
-            clk => clk_tb,
-            reset => reset_tb,
+            clk       => clk_tb,
+            reset     => reset_tb,
             next_addr => next_addr_tb,
             curr_addr => curr_addr_tb
         );
@@ -24,7 +24,7 @@ begin
 
     test_loop : process
     begin
-        -- start from known state
+        -- start from defualt state
         reset_tb <= '1';
         wait until rising_edge(clk_tb);
         reset_tb <= '0';

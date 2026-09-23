@@ -1,12 +1,13 @@
+-- picks the ALU's first input: a register, the PC, or zero
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity alu_a_mux is
     port (
-        data1       : in std_logic_vector(31 downto 0);
-        pc          : in std_logic_vector(31 downto 0);
-        alu_a_sel   : in std_logic_vector(1 downto 0);
+        data1       : in  std_logic_vector(31 downto 0);
+        pc          : in  std_logic_vector(31 downto 0);
+        alu_a_sel   : in  std_logic_vector(1 downto 0);
         alu_a       : out std_logic_vector(31 downto 0)
     );
 end entity alu_a_mux;

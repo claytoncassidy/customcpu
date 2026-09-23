@@ -24,21 +24,21 @@ architecture simulation of load_extender_tb is
         (raw_data => x"000000FF", mem_size => "00", load_unsigned => '1', extended => x"000000FF"),
         -- byte, signed, negative: 0xFF sign-extends to -1
         (raw_data => x"000000FF", mem_size => "00", load_unsigned => '0', extended => x"FFFFFFFF"),
-        -- byte, signed, positive: sign bit clear, extension is a no-op
+        -- byte, signed, positive: sign bit clear, extension is a no op
         (raw_data => x"00000045", mem_size => "00", load_unsigned => '0', extended => x"00000045"),
 
         -- halfword, unsigned: 0xFFFF zero-extends to 65535
         (raw_data => x"0000FFFF", mem_size => "01", load_unsigned => '1', extended => x"0000FFFF"),
         -- halfword, signed, negative: 0xFFFF sign-extends to -1
         (raw_data => x"0000FFFF", mem_size => "01", load_unsigned => '0', extended => x"FFFFFFFF"),
-        -- halfword, signed, positive: sign bit clear, extension is a no-op
+        -- halfword, signed, positive: sign bit clear, extension is a no op
         (raw_data => x"00001234", mem_size => "01", load_unsigned => '0', extended => x"00001234"),
 
         -- word: always passes through unchanged, load_unsigned irrelevant either way
         (raw_data => x"12345678", mem_size => "10", load_unsigned => '0', extended => x"12345678"),
         (raw_data => x"12345678", mem_size => "10", load_unsigned => '1', extended => x"12345678"),
 
-        -- unused mem_size encoding:  to others, output forced to zero
+        -- unused mem_size encoding: to others, output forced to zero
         (raw_data => x"FFFFFFFF", mem_size => "11", load_unsigned => '0', extended => x"00000000")
     );
 

@@ -1,12 +1,13 @@
+-- holds the current instruction address, updates every clock cycle
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity program_counter is
     port (
-        clk         : in std_logic;
-        reset       : in std_logic;
-        next_addr   : in std_logic_vector(31 downto 0);
+        clk         : in  std_logic;
+        reset       : in  std_logic;
+        next_addr   : in  std_logic_vector(31 downto 0);
         curr_addr   : out std_logic_vector(31 downto 0)
     );
 end entity program_counter;

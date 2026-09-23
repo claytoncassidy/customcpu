@@ -1,13 +1,14 @@
+-- picks what actually gets written back to the register file
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity writeback_mux is
     port (
-        alu         : in std_logic_vector(31 downto 0);
-        data        : in std_logic_vector(31 downto 0);
-        pc4         : in std_logic_vector(31 downto 0);
-        wb_sel  : in std_logic_vector(1 downto 0);
+        alu         : in  std_logic_vector(31 downto 0);
+        data        : in  std_logic_vector(31 downto 0);
+        pc4         : in  std_logic_vector(31 downto 0);
+        wb_sel      : in  std_logic_vector(1 downto 0);
         writeback   : out std_logic_vector(31 downto 0)
     );
 end entity writeback_mux;

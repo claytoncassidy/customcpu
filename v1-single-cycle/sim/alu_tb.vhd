@@ -83,13 +83,13 @@ architecture simulation of alu_tb is
 begin
     uut : entity work.alu
         port map(
-            a => a_tb,
-            b => b_tb,
-            alu_op => alu_op_tb,
-            result => result_tb,
-            zero => zero_tb,
+            a          => a_tb,
+            b          => b_tb,
+            alu_op     => alu_op_tb,
+            result     => result_tb,
+            zero       => zero_tb,
             invalid_op => invalid_op_tb,
-            overflow => overflow_tb
+            overflow   => overflow_tb
         );
 
     test_loop : process
@@ -111,5 +111,5 @@ begin
         report "all tests completed";
         wait;
     end process;
-    
+
 end architecture simulation;

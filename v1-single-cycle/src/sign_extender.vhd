@@ -1,10 +1,11 @@
+-- pulls the immediate out of an instruction and sign extends it
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity sign_extender is
     port(
-        instruction : in std_logic_vector(31 downto 0);
+        instruction : in  std_logic_vector(31 downto 0);
         extended    : out std_logic_vector(31 downto 0)
     );
 end entity sign_extender;
@@ -14,8 +15,9 @@ architecture behavior of sign_extender is
 begin
     opcode <= instruction(6 downto 0);
     with opcode select
-        -- i-type
-        extended <= (31 downto 12 => instruction(31)) & instruction(31 downto 20)
+        extended <= 
+                    -- i-type
+                    (31 downto 12 => instruction(31)) & instruction(31 downto 20)
                         when "1100111" | "0000011" | "0010011",
                     -- s-type
                     (31 downto 12 => instruction(31)) & instruction(31 downto 25) & instruction(11 downto 7)

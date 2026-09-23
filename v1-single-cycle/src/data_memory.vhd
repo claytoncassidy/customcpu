@@ -1,15 +1,16 @@
+-- read/write memory for loads and stores, handles byte/halfword/word sizes
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity data_memory is
     port(
-        clk             : in std_logic;
-        address         : in std_logic_vector(31 downto 0);
-        write_enable    : in std_logic;
-        write_data      : in std_logic_vector(31 downto 0);
+        clk             : in  std_logic;
+        address         : in  std_logic_vector(31 downto 0);
+        write_enable    : in  std_logic;
+        write_data      : in  std_logic_vector(31 downto 0);
         data            : out std_logic_vector(31 downto 0);
-        mem_size        : in std_logic_vector(1 downto 0)
+        mem_size        : in  std_logic_vector(1 downto 0)
     );
 end entity data_memory;
 
@@ -17,7 +18,7 @@ architecture behavior of data_memory is
     type data_memory_array is array (0 to 255) of std_logic_vector(31 downto 0);
     signal data_memory_registers : data_memory_array := (others => (others => '0'));
 begin
-    -- address(9 downto 2) selects the word; address(1 downto 0) + mem_size select
+    -- address(9 downto 2) selects the word, address(1 downto 0) + mem_size select
     -- which byte(s)/halfword within that word are actually being accessed
     process(address, mem_size, data_memory_registers)
         variable word : std_logic_vector(31 downto 0);

@@ -34,7 +34,7 @@ begin
 
     test_loop : process
     begin
-        -- start from a known state
+        -- start from a defualt state
         reset_tb        <= '1';
         write_enable_tb <= '0';
         wait until rising_edge(clk_tb);
@@ -117,7 +117,7 @@ begin
         assert data2_tb = x"00000022"
             report "test 5 failed: read_addr2 did not return register 2's value" severity error;
 
-        -- test 6: reading a register the same cycle it's written should show the OLD value first
+        -- test 6: reading a register the same cycle its written should show the OLD value first
         write_addr_tb   <= "00100"; -- register 4, currently 0
         write_data_tb   <= x"000000AA";
         write_enable_tb <= '1';

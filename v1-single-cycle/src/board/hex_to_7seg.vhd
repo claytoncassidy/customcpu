@@ -1,3 +1,4 @@
+-- turns a hex digit into the segment pattern to light it up
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -5,7 +6,7 @@ use ieee.numeric_std.all;
 entity hex_to_7seg is
     port (
         hex_digit : in  std_logic_vector(3 downto 0);
-        seg    : out std_logic_vector(6 downto 0) -- active-low, bit order gfedcba
+        seg       : out std_logic_vector(6 downto 0) -- active low, bit order gfedcba
     );
 end entity hex_to_7seg;
 

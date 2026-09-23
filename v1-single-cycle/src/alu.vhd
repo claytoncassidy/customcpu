@@ -1,3 +1,4 @@
+-- performs all 10 of the RV32I register-register operations
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -24,8 +25,8 @@ begin
     process(a, b, alu_op)
         variable temp_result : std_logic_vector(31 downto 0);
     begin
-        invalid_op <= '0';
-        overflow <= '0';
+        invalid_op  <= '0';
+        overflow    <= '0';
         case alu_op is
 
             -- addition // ADD

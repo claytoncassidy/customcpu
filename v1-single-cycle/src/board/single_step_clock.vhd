@@ -1,10 +1,11 @@
+-- debounces the step button into one clean clock pulse
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity single_step_clock is
     port (
-        clk        : in  std_logic; -- board's clock
+        clk        : in  std_logic; -- the board's clock
         btn_in     : in  std_logic;
         step_pulse : out std_logic
     );
@@ -22,7 +23,7 @@ begin
         if rising_edge(clk) then
             btn_sync0 <= btn_in;
             btn_sync1 <= btn_sync0;
-            -- only commit a new stable state after it holds for debounce_limit consecutive cycles
+            -- if button is held for debounce_limit amount of time, count it as a press
             if btn_sync1 /= btn_stable then
                 if counter = debounce_limit then
                     btn_stable <= btn_sync1;
@@ -36,6 +37,6 @@ begin
             btn_stable_prev <= btn_stable;
         end if;
     end process;
-    -- rising-edge detect on the debounced signal: exactly one pulse per clean press, not one per cycle held down
+    -- makes sure only one button press per holding down
     step_pulse <= '1' when (btn_stable = '1' and btn_stable_prev = '0') else '0';
 end architecture behavior;

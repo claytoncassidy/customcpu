@@ -1,12 +1,13 @@
+-- sign or zero extends a loaded byte/halfword back up to a full word
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity load_extender is
     port(
-        raw_data        : in std_logic_vector(31 downto 0);
-        mem_size        : in std_logic_vector(1 downto 0);
-        load_unsigned   : in std_logic;
+        raw_data        : in  std_logic_vector(31 downto 0);
+        mem_size        : in  std_logic_vector(1 downto 0);
+        load_unsigned   : in  std_logic;
         extended        : out std_logic_vector(31 downto 0)
     );
 end entity load_extender;

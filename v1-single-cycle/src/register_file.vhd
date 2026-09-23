@@ -1,18 +1,19 @@
+-- 32 general purpose registers, x0 always reads as zero -- basically what the CPU has to work with at any given moment
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity register_file is
     port(
-        clk             : in std_logic;
-        read_addr1      : in std_logic_vector(4 downto 0);
-        read_addr2      : in std_logic_vector(4 downto 0);
-        write_addr      : in std_logic_vector(4 downto 0);
-        write_data      : in std_logic_vector(31 downto 0);
-        write_enable    : in std_logic;
-        reset           : in std_logic;
-        data1      : out std_logic_vector(31 downto 0);
-        data2      : out std_logic_vector(31 downto 0)
+        clk             : in  std_logic;
+        read_addr1      : in  std_logic_vector(4 downto 0);
+        read_addr2      : in  std_logic_vector(4 downto 0);
+        write_addr      : in  std_logic_vector(4 downto 0);
+        write_data      : in  std_logic_vector(31 downto 0);
+        write_enable    : in  std_logic;
+        reset           : in  std_logic;
+        data1           : out std_logic_vector(31 downto 0);
+        data2           : out std_logic_vector(31 downto 0)
     );
 end entity register_file;
 

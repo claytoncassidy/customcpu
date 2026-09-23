@@ -29,7 +29,7 @@ begin
     test_loop : process
     begin
         write_enable_tb <= '0';
-        mem_size_tb     <= "10"; -- word, for all the original word-only tests below
+        mem_size_tb     <= "10"; 
 
         -- test 1: write 42 to address 0x14 (word index 5), then read it back
         address_tb      <= x"00000014";
@@ -186,7 +186,7 @@ begin
 
         address_tb      <= x"00000055"; -- offset 1
         write_data_tb   <= x"00000099";
-        mem_size_tb      <= "00"; -- byte
+        mem_size_tb     <= "00"; -- byte
         wait until rising_edge(clk_tb);
 
         write_enable_tb <= '0';
@@ -199,7 +199,7 @@ begin
         mem_size_tb <= "10";
         wait for 1 ns;
         assert data_tb = x"AABB99DD"
-            report "test 10 failed: byte write clobbered other bytes in the word" severity error;
+            report "test 10 failed: byte write overwrote other bytes in the word" severity error;
 
         -- test 11: halfword write only touches its own half, rest of the word is untouched
         address_tb      <= x"00000058";
@@ -210,7 +210,7 @@ begin
 
         address_tb      <= x"0000005A"; -- high half
         write_data_tb   <= x"0000BEEF";
-        mem_size_tb      <= "01"; -- halfword
+        mem_size_tb     <= "01"; -- halfword
         wait until rising_edge(clk_tb);
 
         write_enable_tb <= '0';
@@ -218,7 +218,7 @@ begin
         mem_size_tb     <= "10";
         wait for 1 ns;
         assert data_tb = x"BEEF5678"
-            report "test 11 failed: halfword write clobbered the other half of the word" severity error;
+            report "test 11 failed: halfword write overwrote the other half of the word" severity error;
 
         report "all tests completed";
         wait;

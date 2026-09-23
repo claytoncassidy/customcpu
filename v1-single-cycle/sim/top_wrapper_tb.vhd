@@ -6,8 +6,8 @@ entity top_wrapper_tb is
 end entity top_wrapper_tb;
 
 architecture simulation of top_wrapper_tb is
-    signal clk_tb         : std_logic := '0';
-    signal reset_tb       : std_logic;
+    signal clk_tb          : std_logic := '0';
+    signal reset_tb        : std_logic;
     signal writebackOUT_tb : std_logic_vector(31 downto 0);
 
 begin
@@ -40,7 +40,7 @@ begin
         end loop;
         wait for 1 ns;
         assert writebackOUT_tb = x"00000008"
-            report "x4 failed: store-then-load round trip broken" severity error;
+            report "x4 failed: store then load round trip broken" severity error;
 
         -- edge 7: LB x6, 4(x0)
         for i in 1 to 3 loop
@@ -48,7 +48,7 @@ begin
         end loop;
         wait for 1 ns;
         assert writebackOUT_tb = x"FFFFFFFF"
-            report "x6 failed: LB sign-extension not wired correctly" severity error;
+            report "x6 failed: LB sign extension not wired correctly" severity error;
 
         -- edge 9: LHU x7, 8(x0)
         for i in 1 to 2 loop
@@ -56,7 +56,7 @@ begin
         end loop;
         wait for 1 ns;
         assert writebackOUT_tb = x"0000FFFF"
-            report "x7 failed: LHU zero-extension not wired correctly" severity error;
+            report "x7 failed: LHU zero extension not wired correctly" severity error;
 
         -- edge 10: LUI x8
         wait until rising_edge(clk_tb);
@@ -76,7 +76,7 @@ begin
         end loop;
         wait for 1 ns;
         assert writebackOUT_tb = x"0000002A"
-            report "x10 failed: taken BEQ did not redirect correctly (got poison value?)" severity error;
+            report "x10 failed: taken BEQ did not redirect correctly (got bad instruction?)" severity error;
 
         -- edge 15: not-taken BEQ's fallthrough, x11 = 42
         for i in 1 to 2 loop
@@ -84,7 +84,7 @@ begin
         end loop;
         wait for 1 ns;
         assert writebackOUT_tb = x"0000002A"
-            report "x11 failed: not-taken BEQ did not fall through correctly" severity error;
+            report "x11 failed: not taken BEQ did not skip correctly" severity error;
 
         -- edge 18: JAL's real target, x14 = 42
         for i in 1 to 3 loop
