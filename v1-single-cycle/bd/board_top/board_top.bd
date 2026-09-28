@@ -1,13 +1,12 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xC5B6D0CC9432ABE8",
+      "boundary_crc": "0xC5B6D0CCC5B6D0CC",
       "device": "xc7a35tcpg236-1",
       "name": "board_top",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2025.1",
-      "validated": "true"
+      "tool_version": "2025.1"
     },
     "design_tree": {
       "top_wrapper_0": "",
@@ -194,8 +193,8 @@
       "board_clk_1": {
         "ports": [
           "board_clk",
-          "single_step_clock_0/clk",
-          "seven_seg_controller_0/clk"
+          "seven_seg_controller_0/clk",
+          "single_step_clock_0/clk"
         ]
       },
       "btn_step_1": {

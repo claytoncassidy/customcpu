@@ -2,3 +2,17 @@
 # constraints/, and the bd/ Block Design files; see CLAUDE.md's reproducibility notes.
 v1-single-cycle/build/
 v1-single-cycle/desktop build/
+
+# Block Design generated output -- regenerated automatically by Vivado from the
+# tracked .bd/.bxml files (see scripts/build_project.tcl). Only the wrapper .vhd
+# files under hdl/ stay tracked, for browsability without needing Vivado.
+v1-single-cycle/bd/top/ip/
+v1-single-cycle/bd/top/synth/
+v1-single-cycle/bd/top/sim/
+v1-single-cycle/bd/top/hw_handoff/
+v1-single-cycle/bd/top/top_ooc.xdc
+v1-single-cycle/bd/board_top/ip/
+v1-single-cycle/bd/board_top/synth/
+v1-single-cycle/bd/board_top/sim/
+v1-single-cycle/bd/board_top/hw_handoff/
+v1-single-cycle/bd/board_top/board_top_ooc.xdc

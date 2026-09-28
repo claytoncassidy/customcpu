@@ -6,8 +6,7 @@
       "name": "top",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2025.1",
-      "validated": "true"
+      "tool_version": "2025.1"
     },
     "design_tree": {
       "program_counter_0": "",
@@ -31,59 +30,17 @@
     "ports": {
       "clk_0": {
         "type": "clk",
-        "direction": "I",
-        "parameters": {
-          "ASSOCIATED_RESET": {
-            "value": "reset_0",
-            "value_src": "default"
-          },
-          "CLK_DOMAIN": {
-            "value": "top_clk_0",
-            "value_src": "default"
-          },
-          "FREQ_HZ": {
-            "value": "100000000",
-            "value_src": "default"
-          },
-          "FREQ_TOLERANCE_HZ": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "PHASE": {
-            "value": "0.0",
-            "value_src": "default"
-          }
-        }
+        "direction": "I"
       },
       "reset_0": {
         "type": "rst",
-        "direction": "I",
-        "parameters": {
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "POLARITY": {
-            "value": "ACTIVE_LOW",
-            "value_src": "default"
-          }
-        }
+        "direction": "I"
       },
       "writebackOUT": {
         "type": "data",
         "direction": "O",
         "left": "31",
-        "right": "0",
-        "parameters": {
-          "LAYERED_METADATA": {
-            "value": "undef",
-            "value_src": "default"
-          }
-        }
+        "right": "0"
       }
     },
     "components": {
@@ -107,10 +64,6 @@
               "ASSOCIATED_RESET": {
                 "value": "reset",
                 "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "top_clk_0",
-                "value_src": "default_prop"
               }
             }
           },
@@ -260,45 +213,23 @@
               "ASSOCIATED_RESET": {
                 "value": "reset",
                 "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "top_clk_0",
-                "value_src": "default_prop"
               }
             }
           },
           "read_addr1": {
             "direction": "I",
             "left": "4",
-            "right": "0",
-            "parameters": {
-              "PortWidth": {
-                "value": "5",
-                "value_src": "user_prop"
-              }
-            }
+            "right": "0"
           },
           "read_addr2": {
             "direction": "I",
             "left": "4",
-            "right": "0",
-            "parameters": {
-              "PortWidth": {
-                "value": "5",
-                "value_src": "user_prop"
-              }
-            }
+            "right": "0"
           },
           "write_addr": {
             "direction": "I",
             "left": "4",
-            "right": "0",
-            "parameters": {
-              "PortWidth": {
-                "value": "5",
-                "value_src": "user_prop"
-              }
-            }
+            "right": "0"
           },
           "write_data": {
             "direction": "I",
@@ -383,13 +314,7 @@
         "ports": {
           "clk": {
             "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "top_clk_0",
-                "value_src": "default_prop"
-              }
-            }
+            "direction": "I"
           },
           "address": {
             "direction": "I",
@@ -725,8 +650,8 @@
       "clk_0_1": {
         "ports": [
           "clk_0",
-          "program_counter_0/clk",
           "data_memory_0/clk",
+          "program_counter_0/clk",
           "register_file_0/clk"
         ]
       },
@@ -841,10 +766,10 @@
       "program_counter_0_curr_addr": {
         "ports": [
           "program_counter_0/curr_addr",
-          "pc_plus_4_0/pc_in",
-          "instruction_memory_0/address",
           "alu_a_mux_0/pc",
-          "branch_adder_0/pc"
+          "branch_adder_0/pc",
+          "instruction_memory_0/address",
+          "pc_plus_4_0/pc_in"
         ]
       },
       "register_file_0_data1": {
@@ -877,8 +802,8 @@
       "writeback_mux_0_writeback": {
         "ports": [
           "writeback_mux_0/writeback",
-          "register_file_0/write_data",
-          "writebackOUT"
+          "writebackOUT",
+          "register_file_0/write_data"
         ]
       }
     }
