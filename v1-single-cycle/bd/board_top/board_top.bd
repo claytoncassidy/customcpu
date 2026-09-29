@@ -1,12 +1,13 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xC5B6D0CCC5B6D0CC",
+      "boundary_crc": "0xC5B6D0CC9432ABE8",
       "device": "xc7a35tcpg236-1",
       "name": "board_top",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2025.1"
+      "tool_version": "2025.1",
+      "validated": "true"
     },
     "design_tree": {
       "top_wrapper_0": "",
